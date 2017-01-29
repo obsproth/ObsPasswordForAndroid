@@ -90,7 +90,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 ClipboardManager clipboard = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                                 clipboard.setPrimaryClip(ClipData.newPlainText("ObsPassword", passwordStr));
-                                Toast.makeText(view.getContext(), "Success!", Toast.LENGTH_SHORT);
+                                Toast.makeText(view.getContext(), "Success!", Toast.LENGTH_SHORT).show();
                                 dialogInterface.dismiss();
                             }
                         })
