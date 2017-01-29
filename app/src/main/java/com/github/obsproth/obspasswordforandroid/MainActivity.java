@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.EditText;
 
 import com.github.obsproth.obspassword.ServiceElement;
 
@@ -27,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText passwordField = (EditText) findViewById(R.id.pass_field); 
+
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapter = new MyAdapter(this);
+        myAdapter = new MyAdapter(this, passwordField);
         recyclerView.setAdapter(myAdapter);
         
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);

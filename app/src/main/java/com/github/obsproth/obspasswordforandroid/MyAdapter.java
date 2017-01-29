@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.github.obsproth.obspassword.ServiceElement;
@@ -17,9 +18,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<ServiceElement> dataList;
     private LayoutInflater inflater;
 
-    public MyAdapter(Context context) {
+    private EditText passwordField;
+
+    public MyAdapter(Context context, EditText passwordField) {
         this.dataList = new ArrayList<>();
         this.inflater = LayoutInflater.from(context);
+
+        this.passwordField = passwordField;
     }
 
     @Override
@@ -50,7 +55,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         notifyItemRangeInserted(start, list.size());
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView textViewName, textViewLength;
 
         ViewHolder(View itemView) {
