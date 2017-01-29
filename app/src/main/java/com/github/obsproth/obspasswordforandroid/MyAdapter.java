@@ -39,6 +39,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return dataList.size();
     }
 
+    public void add(ServiceElement element) {
+        dataList.add(element);
+        notifyItemInserted(dataList.size() - 1);
+    }
+
+    public void addAll(List<ServiceElement> list) {
+        int start = dataList.size();
+        dataList.addAll(list);
+        notifyItemRangeInserted(start, list.size());
+    }
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textViewName, textViewLength;
 
