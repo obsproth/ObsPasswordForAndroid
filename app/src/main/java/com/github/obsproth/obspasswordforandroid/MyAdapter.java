@@ -45,6 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         ServiceElement serviceElement = dataList.get(position);
         holder.textViewName.setText(serviceElement.getServiceName());
         holder.textViewLength.setText(String.valueOf(serviceElement.getLength()));
+        holder.textViewHash.setText(serviceElement.getBaseHash().substring(0, 7));
     }
 
     @Override
@@ -64,12 +65,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView textViewName, textViewLength;
+        TextView textViewName, textViewLength, textViewHash;
 
         ViewHolder(View itemView) {
             super(itemView);
             textViewName = (TextView) itemView.findViewById(R.id.elem_text_name);
             textViewLength = (TextView) itemView.findViewById(R.id.elem_text_length);
+            textViewHash = (TextView) itemView.findViewById(R.id.elem_basehash);
             itemView.setOnClickListener(this);
         }
 

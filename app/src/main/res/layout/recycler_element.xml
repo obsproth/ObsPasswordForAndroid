@@ -21,8 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/elem_text_length" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/elem_text_length" />
+            android:id="@+id/elem_basehash" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>
